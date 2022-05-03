@@ -23,6 +23,6 @@ const User = connection.define(
   }
 );
 
-User.sync();
+User.sync({alter: true});
 
 export default User;
