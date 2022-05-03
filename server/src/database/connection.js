@@ -14,7 +14,7 @@ const connection = new Sequelize(
 const auth = async () => {
   await connection.authenticate();
   console.log("Connection has been established successfully.");
-}
+};
 
 auth();
 
