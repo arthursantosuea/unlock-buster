@@ -1,11 +1,11 @@
 {
   "name": "api-unlockbuster",
   "version": "1.0.0",
-  "main": "server.js",
+  "main": "src/server.js",
   "license": "MIT",
   "type": "module",
   "scripts": {
-    "dev": "nodemon src/server.js"
+    "dev": "nodemon"
   },
   "dependencies": {
     "cors": "^2.8.5",

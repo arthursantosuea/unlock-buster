@@ -1,5 +1,5 @@
 import { DataTypes } from "sequelize";
-import connection from "../database/connection";
+import connection from "../database/connection.js";
 const User = connection.define("User", {
     name: {
         type: DataTypes.STRING,
@@ -14,6 +14,9 @@ const User = connection.define("User", {
         type: DataTypes.STRING,
         allowNull: false,
     },
-});
+},
+{
+    timestamps: true,
+    });
 
 export default User;
