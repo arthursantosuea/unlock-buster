@@ -10,14 +10,20 @@ export default {
   async create(request, response) {
     const { name, email, password } = request.body;
     const encryptedPassword = await bcrypt.hash(password, 10);
-    const user = await User.create({
-      name,
-      email,
-      password: encryptedPassword,
-    });
-    return response.status(200).json({
-      message: "Usuário criado com sucesso",
-    });
+    try {
+      const user = await User.create({
+        name,
+        email,
+        password: encryptedPassword,
+      });
+      return response.status(201).json({
+        message: "Usuário criado com sucesso",
+      });
+    } catch (error) {
+      return response.status(400).json({
+        message: "Erro ao criar usuário",
+      });
+    }
   },
   async login(request, response) {
     const { email, password } = request.body;
